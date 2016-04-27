@@ -1,0 +1,22 @@
+@lineNum : 4;
+@lineHeight : 20px;
+
+.wrap{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300/16rem;
+	background-color: #eee;
+	.box{
+		background-color: #ccc;
+		width: 200/16rem;
+		height: @lineHeight*@lineNum;
+		font-size: 16px;
+		line-height: @lineHeight;
+		text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: @lineNum;
+    -webkit-box-orient: vertical;
+	}
+}

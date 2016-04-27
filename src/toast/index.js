@@ -1,3 +1,3 @@
-var Toast = require('./toast');
+var toast = require('./toast');
 
-new Toast('这个是提醒哦');
+new toast('这个是提醒哦');

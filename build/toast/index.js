@@ -1,1 +1,1 @@
-var Toast=require("./toast");new Toast("这个是提醒哦");
+var toast=require("./toast");new toast("这个是提醒哦");

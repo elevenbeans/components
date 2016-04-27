@@ -32,7 +32,7 @@
       "gulp-uglify":"*",
 
       "gulp-if":"*",
-
+      "gulp-webserver":"*",
       "gulp-concat": "2.6.0",
       "gulp-file-include": "0.13.7",
       "gulp-md5-plus": "0.1.8",
