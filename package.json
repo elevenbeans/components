@@ -1,0 +1,47 @@
+{
+  "name": "components",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elevenBeans/Components.git"
+  },
+  "keywords": [
+    "components"
+  ],
+  "author": "elevenBeans",
+  "license": "ISC",
+    "devDependencies": {    
+      "gulp": "*",
+      "gulp-clean": "*",
+      "gulp-cache": "^0.4.0",
+      "gulp-less": "^3.0.4",
+      "gulp-css-base64": "^1.3.2",
+      "gulp-css-spriter": "^0.3.3",
+      "gulp-minify-css":"*",
+      "gulp-autoprefixer":"*",
+
+      "gulp-uglify":"*",
+
+      "gulp-if":"*",
+
+      "gulp-concat": "2.6.0",
+      "gulp-file-include": "0.13.7",
+      "gulp-md5-plus": "0.1.8",
+      "gulp-open": "1.0.0",
+      "gulp-util": "~2.2.9",
+      "gulp-watch": "4.1.0",
+      "webpack": "~1.0.0-beta6"
+  },
+  "bugs": {
+    "url": "https://github.com/elevenBeans/Components/issues"
+  },
+  "homepage": "https://github.com/elevenBeans/Components#readme"
+}
