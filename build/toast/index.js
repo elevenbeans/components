@@ -1,1 +1,1 @@
-console.log("ss"),console.warn("h");
+var Toast=require("./toast");new Toast("这个是提醒哦");

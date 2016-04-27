@@ -1,5 +1,6 @@
 //引入插件
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var webserver = require('gulp-webserver');
 var clean = require('gulp-clean');
 var less = require('gulp-less');//处理less
@@ -9,20 +10,25 @@ var autoprefixer = require('gulp-autoprefixer');//自动补全浏览器兼容css
 var gulpif = require('gulp-if');
 var path = require('path');
 
+var webpack = require("webpack");
+var webpackConfig = require("./webpack.config.js");
+
+console.log('webpackConfig:::',webpackConfig);
+
 //运行Gulp时，默认的Task
 gulp.task('default', ['build','webserver']);
 
-gulp.task('build', ['clean','css','js','copy']);
+gulp.task('build', ['clean','css','webpack','js','copy']);
 
 gulp.task('webserver', function() {
-  gulp.src('./src')
+  return gulp.src('./src')
     .pipe(webserver({
     	host:'localhost',
     	path:'/',
       livereload: true,
       directoryListing: true,
       open: true,
-       fallback: 'index.html'
+      fallback: 'index.html'
     }));
 });
 
@@ -56,8 +62,22 @@ gulp.task('css', ['clean'],function() {
 gulp.task('js',['clean'], function() {
   return gulp.src('src/**/*.js') // 匹配 'client/js/somedir/somefile.js' 并且将 `base` 解析为 `client/js/`
   .pipe(uglify())
-  .pipe(gulp.dest('build'))
-  .pipe(gulp.dest('dist')); 
+  .pipe(gulp.dest('build')); 
+});
+
+gulp.task("webpack", function(callback) {
+  var myConfig = Object.create(webpackConfig);
+  // run webpack
+  webpack(
+    // configuration
+    myConfig, 
+    function(err, stats) {
+    if(err) throw new gutil.PluginError("webpack", err);
+    gutil.log("[webpack]", stats.toString({
+    	 // output options
+    }));
+    callback();
+  });
 });
 
 gulp.task("copy", ['clean'],function() {
@@ -67,20 +87,3 @@ gulp.task("copy", ['clean'],function() {
     .pipe(gulp.dest("build"));
 });
 
-// //创建watch任务去检测html文件,其定义了当html改动之后，去调用一个Gulp的Task
-// gulp.task('watch', function () {
-//   gulp.watch(['./src/**/*.html','./src/**/*.js','./src/**/*.css'], ['reload']);
-// });
-
-// //使用connect启动一个Web服务器
-// gulp.task('connect', function () {
-//   connect.server({
-//     root: 'src',
-//     livereload: true
-//   });
-// });
-
-// gulp.task('reload', function () {
-//   gulp.src(['./src/**/*.html','./src/**/*.js','./src/**/*.css'])
-//     .pipe(connect.reload());
-// });
