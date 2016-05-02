@@ -1,5 +1,4 @@
 'use strict';
-
 require('../../zepto/zepto');
 
 function registerCss(className, styles ){
@@ -42,38 +41,76 @@ var mitToast = {
   'transform': 'translateX(-50%)'
 };
 
-registerCss('mit-toast', mitToast);
+var mitMask = {
+  'position': 'fixed',
+  'width':'100%',
+  'height':'100%',
+  'left': '0',
+  'bottom': '0',
+  'z-index': '99999',
+  'padding': '0',
+  'background-color': 'rgba(0,0,0,.65)',
+  'color': '#fff',
+  'font-size': '1rem',
+  'line-height': '1.5',
+  'text-align':'center',
+  'display': '-webkit-box',
+  'display': '-webkit-flex',
+  'display': 'flex',
+  '-webkit-box-align': 'center',    
+  '-webkit-justify-content': 'center',
+  'justify-content': 'center',/* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
+  '-webkit-box-pack': 'center',
+  '-webkit-align-items': 'center',
+  'align-items': 'center'
+};
 
-function Toast(text, disappearTime) {
+function Toast(text, type, disappearTime) {
   var self = this;
   text = text || '';
+  if(type) {
+    registerCss('mitMask', mitMask);
+  }else{
+    registerCss('mit-toast', mitToast);
+  }
   disappearTime = disappearTime || 3500;
-  self._init(text, disappearTime);
+  self._init(text, type, disappearTime);
 }
-Toast.prototype = {
-  _init: function(info, disappearTime) {
-    var self = this;
 
-    $('.mit-toast').remove();
-    self.show(info);
+Toast.prototype = {
+  _init: function(info,type, disappearTime) {
+    var self = this;
+    if(type){
+      $('.mitMask').remove();
+    }else{
+      $('.mit-toast').remove();
+    }
+    self.show(info,type);
+
     if (disappearTime) {
       self.timer = setTimeout(function(){
         self.hide();
       }, disappearTime);
     }
   },
-  show: function(info) {
+  show: function(info,type) {
     var self = this;
-    var infoCon, toastCon;
+    var infoCon, infoWrap, toastCon;
 
     if (self.timer) {
       clearTimeout(self.timer);
     }
 
     infoCon = document.createTextNode(info);
+    infoWrap = document.createElement('span');
     toastCon = document.createElement('div');
-    toastCon.className = 'mit-toast';
-    toastCon.appendChild(infoCon);
+    if(type){
+      toastCon.className = 'mitMask';
+    }else{
+      toastCon.className = 'mit-toast';
+    }
+    infoWrap.appendChild(infoCon);
+    toastCon.appendChild(infoWrap);
     document.body.appendChild(toastCon);
 
     self.toastCon = toastCon;

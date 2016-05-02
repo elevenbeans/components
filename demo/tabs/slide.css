@@ -1,0 +1,28 @@
+.mui-tabs-slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 7;
+}
+.mui-tabs-slide .slide-box {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.mui-tabs-slide .slide-list {
+  min-width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.mui-tabs-slide .slide-inner {
+  overflow: hidden;
+}
+.mui-tabs-slide .slide-show {
+  display: block;
+}
+.mui-tabs-slide .slide-hide {
+  display: none;
+}

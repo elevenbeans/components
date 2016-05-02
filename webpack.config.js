@@ -1,17 +1,29 @@
 var path = require("path");
+//var webpack = require('webpack');
 var uglifyJsPlugin = require("webpack/lib/optimize/uglifyJsPlugin");
 
-console.log('path:::',path.join(__dirname, "./src/toast/"));
+//console.log('path:::',path.join(__dirname, "./src/toast/"));
 
 module.exports = {
-  entry: "./src/toast/index.js",
+  entry: {
+    sticky: "./src/sticky/index.js",
+    toast:"./src/toast/index.js",
+    rem:"./src/rem-adaptive/index.js",
+    scratch:"./src/scratch/index.js"
+  },
   output: {
-    path: path.join(__dirname, "./src/toast/"),
-    filename: "index.bundle.js"
+    path: path.join(__dirname, "./build/js"),
+    filename: "[name].bundle.js"
   },
   module: {
     loaders: [
-      { test: /\.css$/, loader: "style!css" }
+      {
+        loader: 'babel-loader',
+        test: path.join(__dirname, "./src"),
+        query: {
+          presets: 'es2015',
+        },
+      }
     ]
   },
   plugins: [
@@ -28,6 +40,6 @@ module.exports = {
       compress: {
         warnings: false
       }
-  })
+    })
 	]
 };

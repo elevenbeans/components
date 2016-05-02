@@ -19,7 +19,7 @@ console.log('webpackConfig:::',webpackConfig);
 //运行Gulp时，默认的Task
 gulp.task('default', ['build','webserver']);
 
-gulp.task('build', ['clean','css','webpack','js','copy']);
+gulp.task('build', ['clean','css','webpack','copy']);
 
 gulp.task('webserver', function() {
   return gulp.src('../Components')
@@ -57,13 +57,13 @@ gulp.task('css', ['clean'],function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('js',['clean'], function() {
-  return gulp.src('src/**/*.js') // 匹配 'client/js/somedir/somefile.js' 并且将 `base` 解析为 `client/js/`
-  .pipe(uglify())
-  .pipe(gulp.dest('build')); 
-});
+// gulp.task('js',['clean'], function() {
+//   return gulp.src('src/**/*.js') // 匹配 'client/js/somedir/somefile.js' 并且将 `base` 解析为 `client/js/`
+//   .pipe(uglify())
+//   .pipe(gulp.dest('build')); 
+// });
 
-gulp.task("webpack", function(callback) {
+gulp.task("webpack",["css"], function(callback) {
   var myConfig = Object.create(webpackConfig);
   // run webpack
   webpack(
@@ -79,8 +79,8 @@ gulp.task("webpack", function(callback) {
   );
 });
 
-gulp.task("copy", ['clean'],function() {
-  return gulp.src(["src/**/*.png", "src/**/*.jpg", "src/**/*.jpeg", "src/**/*.gif", "src/**/*.json",
+gulp.task("copy", ["webpack"],function() {
+  return gulp.src(["src/**/*.bundle.js","src/**/*.png", "src/**/*.jpg", "src/**/*.jpeg", "src/**/*.gif", "src/**/*.json",
       "src/**/*.html", "src/**/*.htm","src/**/*.woff", "src/**/*.ttf", "src/**/*.eot", "src/**/*.svg"
     ])
     .pipe(gulp.dest("build"));
