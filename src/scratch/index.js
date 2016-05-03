@@ -15,6 +15,7 @@ $("#scratch-layer").wScratchPad({
   			this.clear();
   			this.enable("enabled", false);
   			$("#scratch-layer").hide(300);
+  			$('.pop-content').show();
   			$('.pop-layer').css({'-webkit-animation':'smogbgin 1.6s'});
   		}
   		console.log(percent);

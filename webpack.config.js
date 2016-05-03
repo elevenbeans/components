@@ -9,7 +9,8 @@ module.exports = {
     sticky: "./src/sticky/index.js",
     toast:"./src/toast/index.js",
     rem:"./src/rem-adaptive/index.js",
-    scratch:"./src/scratch/index.js"
+    scratch:"./src/scratch/index.js",
+    progressbar:"./src/progressbar/index.js"
   },
   output: {
     path: path.join(__dirname, "./build/js"),

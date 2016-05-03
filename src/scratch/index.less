@@ -6,6 +6,7 @@
 html,body{
 	margin: 0px;
 	height: 100%;
+	background-color: transparent;
 }
 
 body{
@@ -13,42 +14,46 @@ body{
 	#scratch-layer{
 		height: 100%;
 	}
-	.pop-wrap{
+	.pop-content{
+		display: none;
 		height: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    
-    // display: -moz-box;
-    // display: -moz-flex;
-    
-    // display: -ms-flexbox;
-    
-    display: flex;
-    
-    /* 水平居中*/
-    -webkit-box-align: center;
-    //-moz-box-align: center;
-    //-ms-flex-pack:center;/* IE 10 */
-    
-    -webkit-justify-content: center;
-    //-moz-justify-content: center;
-    justify-content: center;/* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
-    
-    /* 垂直居中 */
-    -webkit-box-pack: center;
-    //-moz-box-pack: center;
-    //-ms-flex-align:center;/* IE 10 */
-    
-    -webkit-align-items: center;
-    //-moz-align-items: center;
-    align-items: center;
-		.pop-layer{
+		width: 100%;
+		position: fixed;
+		.pop-wrap{
+			height: 100%;
+
+			display: flex;
 			//display: none;
-			text-align: center;
-	    margin: 0px auto;
-	    width: 200px;
-	    height: 200px;
-	    background-color: #ccc;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    
+	    // display: -moz-box;
+	    // display: -moz-flex;
+	    // display: -ms-flexbox;
+	    
+	    /* 水平居中*/
+	    -webkit-box-align: center;
+	    //-moz-box-align: center;
+	    //-ms-flex-pack:center;/* IE 10 */
+	    -webkit-justify-content: center;
+	    //-moz-justify-content: center;
+	    justify-content: center;/* IE 11+,Firefox 22+,Chrome 29+,Opera 12.1*/
+	    
+	    /* 垂直居中 */
+	    -webkit-box-pack: center;
+	    //-moz-box-pack: center;
+	    //-ms-flex-align:center;/* IE 10 */
+	    
+	    -webkit-align-items: center;
+	    //-moz-align-items: center;
+	    align-items: center;
+			.pop-layer{
+				text-align: center;
+		    margin: 0px auto;
+		    width: 200px;
+		    height: 200px;
+		    background-color: #ccc;
+			}
 		}
 	}
 }
