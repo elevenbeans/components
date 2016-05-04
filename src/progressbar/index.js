@@ -1,5 +1,6 @@
 import pgb from './progressbar.js';
 
+
 new pgb({
 	bar:'.J_progress',
   container: '.progressbar',
