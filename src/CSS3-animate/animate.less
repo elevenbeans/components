@@ -1,0 +1,234 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+@-webkit-keyframes showfirst{
+	0% {
+		-webkit-transform:scale(0,0);
+		opacity: 0;
+  	}
+  	40% {
+  		-webkit-transform:scale(1,1);
+		opacity: 1;
+  	}
+  	100%{
+  		-webkit-transform:scale(1,1);
+		opacity: 1;
+  	}
+}
+@-webkit-keyframes showsecond{
+	0%{
+  		-webkit-transform:scale(0,0);
+		opacity: 0;
+	}
+  	20% {
+  		-webkit-transform:scale(0,0);
+		opacity: 0;
+  	}
+  	60% {
+  		-webkit-transform:scale(1,1);
+		opacity: 1;
+  	}
+  	100%{
+  		-webkit-transform:scale(1,1);
+		opacity: 1;
+  	}
+}
+@-webkit-keyframes showthird{
+	0%{
+  		-webkit-transform:scale(0,0);
+		opacity: 0;
+	}
+  	40% {
+  		-webkit-transform:scale(0,0);
+		opacity: 0;
+  	}
+  	80% {
+  		-webkit-transform:scale(1,1);
+		opacity: 1;
+  	}
+  	100%{
+  		-webkit-transform:scale(1,1);
+		opacity: 1;
+  	}
+}
+
+@-webkit-keyframes showfourth{
+	0%{
+  		-webkit-transform:translateX(0);
+		opacity: 0;
+	}
+  	60% {
+  		-webkit-transform:translateX(50px);
+		opacity: 0;
+  	}
+  	100% {
+  		-webkit-transform:translateX(0);
+		opacity: 1;
+  	}
+}
+.card-content{
+	position: relative;
+	overflow: hidden;
+	background: url(//gw.alicdn.com/tps/TB1oASZJpXXXXcmXVXXXXXXXXXX-750-1030.jpg_q50.jpg) center center no-repeat;
+	background-size: 100%;
+	a{
+		display: block;
+	}
+	.swiper-container{
+		height: 100%;
+		.swiper-wrapper{
+			width: 100%;
+			height: 100%;
+
+			.myWrap{
+				overflow: hidden;
+			}
+			.swiper-slide{
+				img{
+					width: 100%;
+				}
+				height: 515/16rem;
+				.logo{
+					margin-left: auto;
+					margin-right: auto; 
+					padding-top: 210/16rem;
+					width: 181/16rem;
+					height: 96/16rem;
+				}
+				.cardF{
+					padding-left: 9px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					.cardF-col1{
+						overflow: hidden;
+						margin-bottom:3px;
+						.cardF-col1-left{
+							float: left;
+							overflow: hidden;
+							visibility: hidden;
+							width:118/16rem;
+							height:163/16rem;
+						}
+						.cardF-col1-right{
+							float: right;
+							overflow: hidden;
+							visibility: hidden;
+							width:243/16rem;
+							height:163/16rem;						
+						}
+
+					}
+					.cardF-col2{
+						overflow: hidden;
+						margin-bottom:3/16rem;
+						.cardF-col2-left{
+							float: left;
+							overflow: hidden;
+							visibility: hidden;
+							width:243/16rem;
+							height:163/16rem;
+						}
+						.cardF-col2-right{
+							float: right;
+							overflow: hidden;
+
+							visibility: hidden;
+							width:120/16rem;
+							height:163/16rem;																				
+						}
+
+					}
+					.cardF-col3{
+						overflow: hidden;
+						.cardF-col3-left{
+							float: left;
+							overflow: hidden;
+
+							visibility: hidden;
+							width:243/16rem;
+							height:163/16rem;							
+						}
+						.cardF-col3-right{
+							float: right;
+							overflow: hidden;
+							.cardF-col3-right-t{
+								
+								overflow: hidden;
+								visibility: hidden;
+								width:120/16rem;
+								height:80/16rem;	
+							}
+							.cardF-col3-right-b{
+								
+								float: right;
+								overflow: hidden;
+								visibility: hidden;
+								width:80/16rem;
+								height:80/16rem;		
+							}						
+						}
+					}
+				}
+				.cardT{
+					padding-left: 9px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					.cardT-col1{
+						overflow: hidden;
+						margin-bottom:3px;
+						.cardT-col1-left{
+							float: left;
+							padding-top:49/16rem;
+							padding-left:52/16rem;
+							width:68/16rem;
+							height:114/16rem;
+						}
+						.cardT-col1-right{
+							float: right;
+							width:243/16rem;
+							height:163/16rem;
+						}
+					}
+					.cardT-col2{
+						overflow: hidden;
+						.cardT-col2-left{
+							float: left;
+							overflow: hidden;
+							width:243/16rem;
+							.cardT-col2-left-t{
+								float: left;
+								margin-bottom:3px;
+								width:243/16rem;
+								height:163/16rem;
+							}
+							.cardT-col2-left-b-l{
+								float: left;
+
+								visibility: hidden;
+								margin-right:3px;
+								width:120/16rem;
+								height:163/16rem;
+							}
+							.cardT-col2-left-b-r{
+								float: right;
+								width:120/16rem;
+								height:163/16rem;
+							}
+						}
+						.cardT-col2-right{
+							float: right;
+							
+							width:120/16rem;
+							height:329px/16rem;
+							img{
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -10,7 +10,8 @@ module.exports = {
     toast:"./src/toast/index.js",
     rem:"./src/rem-adaptive/index.js",
     scratch:"./src/scratch/index.js",
-    progressbar:"./src/progressbar/index.js"
+    progressbar:"./src/progressbar/index.js",
+    animate:"./src/CSS3-animate/index.js"
   },
   output: {
     path: path.join(__dirname, "./build/js"),
