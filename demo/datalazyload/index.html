@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>调用全局实例</title>
+</head>
+<body>
+<p>此用法是为了避免页面上每个模块都去创建自己的datalazyload实例（这样会不便于管理，且对性能有影响），提供方法允许大家访问全局实例</p>
+
+<p>例如，每个模块都只应该调用这个实例的addElements方法来处理所需要的层，而页面的脚本（或斑马模块的solution）则来控制diff等属性</p>
+
+<div class="lazy-load-container">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container-1">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container-2">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container-3">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container-4">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container-4">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container-5">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+<div class="lazy-load-zepto-container-6">
+    <img src="//a.tbcdn.cn/kissy/1.0.0/build/imglazyload/spaceball.gif"
+         data-ks-lazyload="//img.alicdn.com/tps/TB1BOzhJVXXXXXnXVXXXXXXXXXX-190-153.jpg" alt=""/>
+</div>
+
+<div class="lazy-load-zepto-callback-container"></div>
+
+<script src="../../build/js/lazyload.bundle.js"></script>
+</body>
+</html>

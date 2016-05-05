@@ -11,7 +11,9 @@ module.exports = {
     rem:"./src/rem-adaptive/index.js",
     scratch:"./src/scratch/index.js",
     progressbar:"./src/progressbar/index.js",
-    animate:"./src/CSS3-animate/index.js"
+    animate:"./src/CSS3-animate/index.js",
+    lazyload:"./src/datalazyload/index.js",
+    tabs:"./src/tabs/index.js"
   },
   output: {
     path: path.join(__dirname, "./build/js"),
